@@ -12,7 +12,7 @@ import {
   WidgetType,
   WIDGET_PADDING,
 } from "constants/WidgetConstants";
-import React, { Component, ReactNode } from "react";
+import React, { Component, ReactNode, RefObject } from "react";
 import { get, memoize } from "lodash";
 import DraggableComponent from "components/editorComponents/DraggableComponent";
 import SnipeableComponent from "components/editorComponents/SnipeableComponent";
@@ -223,9 +223,23 @@ abstract class BaseWidget<
 
   /* eslint-disable @typescript-eslint/no-empty-function */
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  componentDidUpdate(prevProps: T) {}
+  componentDidUpdate(prevProps: T) {
+    if (
+      !this.props.deferRender &&
+      this.props.deferRender !== prevProps.deferRender
+    ) {
+      this.deferredComponentDidRender();
+    }
+  }
 
   componentDidMount(): void {}
+
+  /*
+   * Appsmith widget life cycle method that gets called
+   * when the deferred widget component renders.
+   */
+  deferredComponentDidRender(): void {}
+
   /* eslint-enable @typescript-eslint/no-empty-function */
 
   getComponentDimensions = () => {
@@ -279,10 +293,7 @@ abstract class BaseWidget<
    */
   makeResizable(content: ReactNode) {
     return (
-      <ResizableComponent
-        {...this.props}
-        paddingOffset={PositionedContainer.padding}
-      >
+      <ResizableComponent {...this.props} paddingOffset={WIDGET_PADDING}>
         {content}
       </ResizableComponent>
     );
@@ -350,6 +361,7 @@ abstract class BaseWidget<
         parentColumnSpace={this.props.parentColumnSpace}
         parentId={this.props.parentId}
         parentRowSpace={this.props.parentRowSpace}
+        ref={this.props.wrapperRef}
         resizeDisabled={this.props.resizeDisabled}
         selected={this.props.selected}
         topRow={this.props.topRow}
@@ -428,7 +440,7 @@ abstract class BaseWidget<
      * Note:- This is done to retain the old rendering flow without any breaking changes.
      * This could be refactored into not changing the widget type but to have a boolean flag.
      */
-    if (type === "SKELETON_WIDGET") {
+    if (type === "SKELETON_WIDGET" || this.props.deferRender) {
       return <Skeleton />;
     }
 
@@ -590,6 +602,8 @@ export interface WidgetDisplayProps {
   isDisabled?: boolean;
   backgroundColor?: string;
   animateLoading?: boolean;
+  deferRender?: boolean;
+  wrapperRef?: RefObject<HTMLDivElement>;
 }
 
 export interface WidgetDataProps
