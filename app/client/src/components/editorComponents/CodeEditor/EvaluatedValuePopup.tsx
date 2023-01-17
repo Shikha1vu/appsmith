@@ -576,7 +576,7 @@ function EvaluatedValuePopup(props: Props) {
             setContentHovered(true);
           }}
           onMouseLeave={() => {
-            const id = setTimeout(() => setContentHovered(false), 500);
+            const id = window.setTimeout(() => setContentHovered(false), 500);
             setTimeoutId(id);
           }}
           preparedStatementViewer={

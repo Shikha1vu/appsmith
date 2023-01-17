@@ -118,7 +118,7 @@ function SearchBox({ category, query, setCategory, setQuery }: SearchBoxProps) {
   const listenToChange = useListenToChange(modalOpen);
 
   const updateSearchQuery = useCallback(
-    (query) => {
+    (query: string) => {
       // to prevent key combo to open modal from triggering query update
       if (!listenToChange) return;
       setQuery(query);

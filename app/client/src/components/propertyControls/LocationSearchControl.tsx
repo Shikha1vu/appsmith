@@ -81,6 +81,7 @@ function MapScriptWrapper(props: MapScriptWrapperProps) {
   return (
     <div data-standalone-searchbox="">
       {status === ScriptStatus.READY && (
+        // @ts-expect-error type
         <StandaloneSearchBox
           onPlacesChanged={() => {
             props.onPlacesChanged();

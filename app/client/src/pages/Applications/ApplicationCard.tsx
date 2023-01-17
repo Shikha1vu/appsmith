@@ -776,7 +776,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
   }, [props.application.defaultPageId, params]);
 
   const launchApp = useCallback(
-    (e) => {
+    (e: { preventDefault: () => void; stopPropagation: () => void }) => {
       e.preventDefault();
       e.stopPropagation();
       setURLParams();

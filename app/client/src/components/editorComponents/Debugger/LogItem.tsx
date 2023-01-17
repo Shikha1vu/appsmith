@@ -363,6 +363,7 @@ function LogItem(props: LogItemProps) {
       </InnerWrapper>
 
       {collapsable && isOpen && (
+        // @ts-expect-error type
         <StyledCollapse
           category={props.category}
           isOpen={isOpen}

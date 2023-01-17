@@ -9,7 +9,7 @@ import { appInitializer } from "utils/AppUtils";
 import { Slide } from "react-toastify";
 import store, { runSagaMiddleware } from "./store";
 import { Layers, LayersContext } from "constants/Layers";
-import AppRouter from "./AppRouter";
+import AppRouter from "@appsmith/AppRouter";
 import * as Sentry from "@sentry/react";
 import { getCurrentThemeDetails } from "selectors/themeSelectors";
 import { AppState } from "@appsmith/reducers";

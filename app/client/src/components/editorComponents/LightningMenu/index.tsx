@@ -12,6 +12,7 @@ import { useActions, useWidgets, usePageId } from "./hooks";
 import { Theme, Skin } from "constants/DefaultTheme";
 import { withTheme } from "styled-components";
 import { useDispatch } from "react-redux";
+import { AnyAction, Dispatch } from "redux";
 
 const lightningMenuOptions = (
   skin: Skin,
@@ -19,7 +20,7 @@ const lightningMenuOptions = (
   queries: Action[],
   widgets: WidgetProps[],
   pageId: string,
-  dispatch: (action: unknown) => void,
+  dispatch: Dispatch<AnyAction>,
   updateDynamicInputValue: (value: string, cursor?: number) => void,
   trigger: React.ReactNode,
   onCloseLightningMenu?: () => void,

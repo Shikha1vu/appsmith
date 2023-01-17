@@ -236,7 +236,7 @@ export default function SnippetDescription({ item }: { item: Snippet }) {
   }, [title]);
 
   const handleCopy = useCallback(
-    (value) => {
+    (value: string) => {
       copy(value);
       Toaster.show({
         text: "Snippet copied to clipboard",
@@ -268,7 +268,7 @@ export default function SnippetDescription({ item }: { item: Snippet }) {
   }, [snippet, selectedArgs, dataType]);
 
   const handleArgChange = useCallback(
-    (value, arg) => {
+    (value: any, arg: { name: any; type: ValidationTypes }) => {
       setSelectedArgs({
         ...selectedArgs,
         [arg.name]: value,
@@ -349,11 +349,13 @@ export default function SnippetDescription({ item }: { item: Snippet }) {
                   errors={evaluatedArguments[arg.name]?.errors}
                   evaluatedValue={evaluatedArguments[arg.name]?.value}
                   expected={getExpectedValue({ type: arg.type })}
+                  hinting={undefined}
                   input={{
                     value: selectedArgs[arg.name],
                     onChange: (value: any) => handleArgChange(value, arg),
                   }}
                   isInvalid={evaluatedArguments[arg.name]?.isInvalid}
+                  marking={undefined}
                   mode={EditorModes.TEXT_WITH_BINDING}
                   popperPlacement="right-start"
                   popperZIndex={Layers.portals}

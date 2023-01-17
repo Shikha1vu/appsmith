@@ -225,10 +225,13 @@ function GlobalSearch() {
   ] = useState<Array<DocSearchItem>>([]);
 
   const [activeItemIndex, setActiveItemIndexInState] = useState(0);
-  const setActiveItemIndex = useCallback((index) => {
-    scrollPositionRef.current = 0;
-    setActiveItemIndexInState(index);
-  }, []);
+  const setActiveItemIndex = useCallback(
+    (index: React.SetStateAction<number>) => {
+      scrollPositionRef.current = 0;
+      setActiveItemIndexInState(index);
+    },
+    [],
+  );
 
   useEffect(() => {
     setTimeout(() => document.getElementById("global-search")?.focus());

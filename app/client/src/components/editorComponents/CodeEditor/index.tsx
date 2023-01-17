@@ -222,7 +222,7 @@ const getEditorIdentifier = (props: EditorProps): string => {
   return props.dataTreePath || props.focusElementName || "";
 };
 
-class CodeEditor extends Component<Props, State> {
+class CodeEditor extends Component<React.PropsWithChildren<Props>, State> {
   static defaultProps = {
     marking: [bindingMarker, entityMarker],
     hinting: [bindingHint, commandsHelper],
@@ -1189,7 +1189,10 @@ class CodeEditor extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state: AppState, props: EditorProps) => ({
+const mapStateToProps = (
+  state: AppState,
+  props: React.PropsWithChildren<EditorProps>,
+) => ({
   dynamicData: getDataTreeForAutocomplete(state),
   datasources: state.entities.datasources,
   pluginIdToImageLocation: getPluginIdToImageLocation(state),
