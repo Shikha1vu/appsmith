@@ -27,7 +27,7 @@ function TableActionIcon(props: TableActionIconProps) {
     >
       <TableIconWrapper
         className={props.className}
-        onClick={(e) => {
+        onClick={(e: any) => {
           props.selectMenu(!props.selected);
           e.stopPropagation();
         }}

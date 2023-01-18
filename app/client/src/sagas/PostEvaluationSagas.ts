@@ -125,7 +125,7 @@ function logLatestEvalPropertyErrors(
           // TODO Rank and set the most critical error
           // const error = evalErrors[0];
           // Reformatting eval errors here to a format usable by the debugger
-          const errorMessages = errors.map((e) => {
+          const errorMessages = errors.map((e: any) => {
             // Error format required for the debugger
             return {
               message: e.errorMessage,

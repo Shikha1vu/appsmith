@@ -369,7 +369,7 @@ function LogItem(props: LogItemProps) {
           isOpen={isOpen}
           keepChildrenMounted
         >
-          {messages.map((e) => {
+          {messages.map((e: any) => {
             return (
               <MessageWrapper
                 key={e.message}

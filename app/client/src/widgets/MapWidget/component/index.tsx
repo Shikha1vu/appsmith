@@ -132,7 +132,7 @@ const MyMapComponent = withGoogleMap((props: any) => {
   return (
     <GoogleMap
       center={mapCenter}
-      onClick={(e) => {
+      onClick={(e: any) => {
         if (props.enableCreateMarker) {
           props.saveMarker(e.latLng.lat(), e.latLng.lng());
         }

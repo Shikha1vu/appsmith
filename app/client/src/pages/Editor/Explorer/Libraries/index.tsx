@@ -188,7 +188,7 @@ const PrimaryCTA = function({ lib }: { lib: TJSLibrary }) {
   const url = lib.url as string;
 
   const uninstallLibrary = useCallback(
-    (e) => {
+    (e: any) => {
       e.stopPropagation();
       dispatch(uninstallLibraryInit(lib));
     },

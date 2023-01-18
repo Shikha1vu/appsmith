@@ -149,7 +149,7 @@ export const EntityProperty = memo((props: any) => {
   };
 
   const toggleChildren = useCallback(
-    (e) => {
+    (e: any) => {
       e.stopPropagation();
       setIsOpen(!isOpen);
     },

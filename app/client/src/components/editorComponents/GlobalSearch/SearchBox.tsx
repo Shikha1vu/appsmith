@@ -145,7 +145,7 @@ function SearchBox({ category, query, setCategory, setQuery }: SearchBoxProps) {
           className="t--global-search-input"
           id="global-search"
           onChange={(e) => updateSearchQuery(e.currentTarget.value)}
-          onKeyDown={(e) => {
+          onKeyDown={(e: any) => {
             handleKeyDown(e);
             if (e.key === "Backspace" && !query)
               setCategory({ id: SEARCH_CATEGORY_ID.INIT });

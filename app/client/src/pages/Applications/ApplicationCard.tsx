@@ -791,7 +791,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
   );
 
   const editApp = useCallback(
-    (e) => {
+    (e: any) => {
       e.preventDefault();
       e.stopPropagation();
       setURLParams();

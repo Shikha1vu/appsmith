@@ -161,7 +161,7 @@ function ColorPickerPopup(props: ColorPickerPopupProps) {
                     props.color === themeColors[colorKey] ? "ring-1" : ""
                   }`}
                   key={`color-picker-v2-${colorKey}`}
-                  onClick={(e) => {
+                  onClick={(e: any) => {
                     e.stopPropagation();
                     e.preventDefault();
                     setColor(themeColors[colorKey]);
@@ -192,7 +192,7 @@ function ColorPickerPopup(props: ColorPickerPopupProps) {
                     color === brandColors[colorKey] ? "ring-1" : ""
                   }`}
                   key={`${colorKey}-${colorIndex}`}
-                  onClick={(e) => {
+                  onClick={(e: any) => {
                     setColor(brandColors[colorKey]);
                     setIsOpen(false);
                     changeColor(brandColors[colorKey], !e.isTrusted);
@@ -216,7 +216,7 @@ function ColorPickerPopup(props: ColorPickerPopupProps) {
                     color === colorCode ? "ring-1" : ""
                   }`}
                   key={colorCode}
-                  onClick={(e) => {
+                  onClick={(e: any) => {
                     setColor(colorCode);
                     setIsOpen(false);
                     changeColor(colorCode, !e.isTrusted);
@@ -243,7 +243,7 @@ function ColorPickerPopup(props: ColorPickerPopupProps) {
                       : ""
                   }`}
                   key={`all-colors-${colorKey}-${singleColorKey}`}
-                  onClick={(e) => {
+                  onClick={(e: any) => {
                     setIsOpen(false);
                     e.stopPropagation();
                     setColor(TAILWIND_COLORS[colorKey][singleColorKey]);
@@ -265,7 +265,7 @@ function ColorPickerPopup(props: ColorPickerPopupProps) {
             className={`${COLOR_BOX_CLASSES}  ${
               color === "#fff" ? "ring-1" : ""
             }`}
-            onClick={(e) => {
+            onClick={(e: any) => {
               setColor("#fff");
               changeColor("#fff", !e.isTrusted);
             }}
@@ -275,7 +275,7 @@ function ColorPickerPopup(props: ColorPickerPopupProps) {
             className={`${COLOR_BOX_CLASSES}  diagnol-cross ${
               color === "transparent" ? "ring-1" : ""
             }`}
-            onClick={(e) => {
+            onClick={(e: any) => {
               setColor("transparent");
               changeColor("transparent", !e.isTrusted);
             }}
