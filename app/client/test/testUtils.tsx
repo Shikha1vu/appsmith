@@ -7,7 +7,7 @@ import * as customQueries from "./customQueries";
 import { BrowserRouter } from "react-router-dom";
 import appReducer, { AppState } from "@appsmith/reducers";
 import { DndProvider } from "react-dnd";
-import TouchBackend from "react-dnd-touch-backend";
+import { TouchBackend } from "react-dnd-touch-backend";
 import { applyMiddleware, compose, createStore } from "redux";
 import { reduxBatch } from "@manaflair/redux-batch";
 import createSagaMiddleware from "redux-saga";

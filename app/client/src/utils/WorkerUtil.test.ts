@@ -54,7 +54,7 @@ class MockWorkerClass implements WorkerClass {
     expect(this.running).toEqual(true);
     expect(this.callback).not.toEqual(this.noop);
     this.messages.push(message);
-    const counter = setTimeout(() => {
+    const counter = window.setTimeout(() => {
       const response = {
         messageId: message.messageId,
         messageType: "RESPONSE",

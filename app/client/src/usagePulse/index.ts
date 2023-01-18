@@ -84,7 +84,7 @@ class UsagePulse {
   static scheduleNextActivityListeners() {
     UsagePulse.deregisterActivityListener();
 
-    UsagePulse.Timer = setTimeout(
+    UsagePulse.Timer = window.setTimeout(
       UsagePulse.registerActivityListener,
       PULSE_INTERVAL * 1000,
     );

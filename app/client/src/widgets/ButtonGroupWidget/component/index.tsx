@@ -397,7 +397,7 @@ class ButtonGroupComponent extends React.Component<
       };
     });
 
-    this.timer = setTimeout(() => {
+    this.timer = window.setTimeout(() => {
       this.setState(() => {
         return {
           ...this.state,
@@ -419,7 +419,7 @@ class ButtonGroupComponent extends React.Component<
       if (this.timer) {
         clearTimeout(this.timer);
       }
-      this.timer = setTimeout(() => {
+      this.timer = window.setTimeout(() => {
         this.setState(() => {
           return {
             ...this.state,

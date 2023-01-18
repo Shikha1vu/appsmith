@@ -49,7 +49,7 @@ function useToolTip(
        * Using setTimeout to simulate hoverOpenDelay of the tooltip
        * during initial render
        */
-      timeout = setTimeout(() => {
+      timeout = window.setTimeout(() => {
         if (element && element.offsetWidth < element.scrollWidth) {
           setRequiresTooltip(true);
         } else {

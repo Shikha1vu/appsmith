@@ -120,7 +120,7 @@ export const EntityExplorerSidebar = memo((props: Props) => {
    * on hover of resizer, show tooltip
    */
   const onHoverResizer = useCallback(() => {
-    tooltipTimeout = setTimeout(() => {
+    tooltipTimeout = window.setTimeout(() => {
       setTooltipIsOpen(true);
     }, 250);
   }, [setTooltipIsOpen]);

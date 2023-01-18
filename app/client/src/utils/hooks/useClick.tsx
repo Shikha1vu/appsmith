@@ -19,7 +19,7 @@ export default (
           clearTimeout(timeoutId);
           clickCount = 0;
         } else {
-          timeoutId = setTimeout(() => {
+          timeoutId = window.setTimeout(() => {
             singleClk(e);
             clickCount = 0;
           }, 200);

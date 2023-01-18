@@ -245,7 +245,7 @@ function GitConnection({ isImport }: Props) {
   }, []);
 
   const stopShowingCopiedAfterDelay = () => {
-    timerRef.current = setTimeout(() => {
+    timerRef.current = window.setTimeout(() => {
       setShowCopied(false);
     }, 2000);
   };
