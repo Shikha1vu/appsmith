@@ -12772,7 +12772,7 @@ rc-resize-observer@^1.0.0:
     rc-util "^5.27.0"
     resize-observer-polyfill "^1.5.1"
 
-rc-select@^14.1.9, rc-select@~14.2.0:
+rc-select@^14.2.0, rc-select@~14.2.0:
   version "14.2.0"
   resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-14.2.0.tgz#60e83a7d5a5dae7fd9e3918d9b209074ea2c92d4"
   integrity sha512-tvxHmbAA0EIhBkB7dyaRhcBUIWHocQbUFY/fBlezj2jg5p65a5VQ/UhBg2I9TA1wjpsr5CCx0ruZPkYcUMjDoQ==
@@ -12785,7 +12785,7 @@ rc-select@^14.1.9, rc-select@~14.2.0:
     rc-util "^5.16.1"
     rc-virtual-list "^3.4.13"
 
-rc-tree-select@^5.4.0:
+rc-tree-select@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/rc-tree-select/-/rc-tree-select-5.6.0.tgz#f34147f4c14341430bcece481804496d0abd3371"
   integrity sha512-XG6pu0a9l6+mzhQqUYfR2VIONbe/3LjVc3wKt28k6uBMZsI1j+SSxRyt/7jWRq8Kok8jHJBQASlDg6ehr9Sp0w==

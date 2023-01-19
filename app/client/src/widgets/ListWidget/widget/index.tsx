@@ -13,7 +13,7 @@ import {
   isEmpty,
 } from "lodash";
 import memoizeOne from "memoize-one";
-import shallowEqual from "shallowequal";
+import { shallowEqual } from "shallowequal";
 import WidgetFactory from "utils/WidgetFactory";
 import { removeFalsyEntries } from "utils/helpers";
 import BaseWidget, { WidgetProps, WidgetState } from "widgets/BaseWidget";
