@@ -1,0 +1,22 @@
+diff --git a/node_modules/react-google-maps/types/index.d.ts b/node_modules/react-google-maps/types/index.d.ts
+index bdf0fb1..12f0853 100644
+--- a/node_modules/react-google-maps/types/index.d.ts
++++ b/node_modules/react-google-maps/types/index.d.ts
+@@ -257,7 +257,7 @@ declare module 'react-google-maps/lib/components/GoogleMap' {
+         onZoomChanged?(): void
+     }
+ 
+-    export default class GoogleMap extends Component<GoogleMapProps> {
++    export default class GoogleMap extends Component<React.PropsWithChildren<GoogleMapProps>> {
+         fitBounds(bounds: google.maps.LatLngBounds | google.maps.LatLngBoundsLiteral): void
+         panBy(x: number, y: number): void
+         panTo(latLng: google.maps.LatLng | google.maps.LatLngLiteral): void
+@@ -457,7 +457,7 @@ declare module 'react-google-maps/lib/components/places/SearchBox' {
+         onPlacesChanged?(): void
+     }
+ 
+-    export default class SearchBox extends Component<SearchBoxProps> {
++    export default class SearchBox extends Component<React.PropsWithChildren<SearchBoxProps>> {
+         getBounds(): google.maps.LatLngBounds
+         getPlaces(): google.maps.places.PlaceResult[]
+     }

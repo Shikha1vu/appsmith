@@ -185,17 +185,20 @@ export const EntityProperty = memo((props: any) => {
           </TooltipComponent>
         </div>
       </CopyBox>
-      <Collapse className="px-4" isOpen={isOpen}>
-        {isString ? (
-          <span className="type-text">{props.value}</span>
-        ) : (
-          <CurrentValueViewer
-            evaluatedValue={props.value}
-            hideLabel
-            theme={EditorTheme.LIGHT}
-          />
-        )}
-      </Collapse>
+      {
+        // @ts-expect-error type
+        <Collapse className="px-4" isOpen={isOpen}>
+          {isString ? (
+            <span className="type-text">{props.value}</span>
+          ) : (
+            <CurrentValueViewer
+              evaluatedValue={props.value}
+              hideLabel
+              theme={EditorTheme.LIGHT}
+            />
+          )}
+        </Collapse>
+      }
     </Wrapper>
   );
 });

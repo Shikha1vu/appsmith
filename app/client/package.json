@@ -132,7 +132,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-table": "^7.0.0",
     "react-tabs": "^3.0.0",
-    "react-timer-hook": "^3.0.4",
+    "react-timer-hook": "^3.0.5",
     "react-toastify": "^5.5.0",
     "react-use-gesture": "^7.0.4",
     "react-virtuoso": "^1.9.0",

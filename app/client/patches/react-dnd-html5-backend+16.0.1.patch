@@ -1,0 +1,9 @@
+diff --git a/node_modules/react-dnd-html5-backend/dist/index.d.ts b/node_modules/react-dnd-html5-backend/dist/index.d.ts
+index 9098f2a..cca18c7 100644
+--- a/node_modules/react-dnd-html5-backend/dist/index.d.ts
++++ b/node_modules/react-dnd-html5-backend/dist/index.d.ts
+@@ -3,3 +3,4 @@ export { getEmptyImage } from './getEmptyImage.js';
+ export * as NativeTypes from './NativeTypes.js';
+ export type { HTML5BackendContext, HTML5BackendOptions } from './types.js';
+ export declare const HTML5Backend: BackendFactory;
++export default HTML5Backend;

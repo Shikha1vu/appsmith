@@ -41,6 +41,9 @@ import { ReactComponent as CopyIcon } from "assets/icons/menu/copy-snippet.svg";
 import AnalyticsUtil from "utils/AnalyticsUtil";
 import { SnippetAction } from "reducers/uiReducers/globalSearchReducer";
 import { Layers } from "constants/Layers";
+import { bindingMarker, entityMarker } from "../CodeEditor/markHelpers";
+import { bindingHint } from "../CodeEditor/hintHelpers";
+import { commandsHelper } from "../CodeEditor/commandsHelper";
 
 SyntaxHighlighter.registerLanguage("sql", sql);
 
@@ -349,13 +352,13 @@ export default function SnippetDescription({ item }: { item: Snippet }) {
                   errors={evaluatedArguments[arg.name]?.errors}
                   evaluatedValue={evaluatedArguments[arg.name]?.value}
                   expected={getExpectedValue({ type: arg.type })}
-                  hinting={undefined}
+                  hinting={[bindingHint, commandsHelper]}
                   input={{
                     value: selectedArgs[arg.name],
                     onChange: (value: any) => handleArgChange(value, arg),
                   }}
                   isInvalid={evaluatedArguments[arg.name]?.isInvalid}
-                  marking={undefined}
+                  marking={[bindingMarker, entityMarker]}
                   mode={EditorModes.TEXT_WITH_BINDING}
                   popperPlacement="right-start"
                   popperZIndex={Layers.portals}

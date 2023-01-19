@@ -32,11 +32,13 @@ const FUSE_OPTIONS = {
 };
 
 const SingleDropDown = Select.ofType<DropdownOption>();
-const StyledSingleDropDown = styled(SingleDropDown)<{
-  isSelected: boolean;
-  isValid: boolean;
-  hasError?: boolean;
-}>`
+const StyledSingleDropDown = styled(SingleDropDown)<
+  React.PropsWithChildren<{
+    isSelected: boolean;
+    isValid: boolean;
+    hasError?: boolean;
+  }>
+>`
   div {
     flex: 1 1 auto;
   }

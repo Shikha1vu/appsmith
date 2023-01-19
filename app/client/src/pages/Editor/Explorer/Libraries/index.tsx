@@ -269,17 +269,21 @@ function LibraryEntity({ lib }: { lib: TJSLibrary }) {
         </Version>
         <PrimaryCTA lib={lib} />
       </div>
-      <Collapse className="text-xs" isOpen={isOpen}>
-        <div className="content pr-2">
-          Available as{" "}
-          <div className="accessor">
-            {lib.accessor[lib.accessor.length - 1]}{" "}
-            <div>
-              <CopyIcon onClick={copyToClipboard} />
+      {
+        // @ts-expect-error type
+
+        <Collapse className="text-xs" isOpen={isOpen}>
+          <div className="content pr-2">
+            Available as{" "}
+            <div className="accessor">
+              {lib.accessor[lib.accessor.length - 1]}{" "}
+              <div>
+                <CopyIcon onClick={copyToClipboard} />
+              </div>
             </div>
           </div>
-        </div>
-      </Collapse>
+        </Collapse>
+      }
     </Library>
   );
 }

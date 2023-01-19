@@ -269,7 +269,13 @@ function GlobalSearch() {
     .map((r) => getEntityId(r))
     .filter(Boolean);
   const recentEntityIndex = useCallback(
-    (entity) => {
+    (entity: {
+      kind: SEARCH_ITEM_TYPES;
+      id: any;
+      widgetId: any;
+      config: { id: any };
+      pageId: any;
+    }) => {
       if (entity.kind === SEARCH_ITEM_TYPES.document) return -1;
       const id =
         entity.id || entity.widgetId || entity.config?.id || entity.pageId;

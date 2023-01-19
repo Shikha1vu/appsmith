@@ -204,6 +204,7 @@ export default function TreeDropdown(props: TreeDropdownProps) {
     </StyledDropDownContainer>
   );
   return (
+    // @ts-expect-error type
     <StyledPopover
       boundary="viewport"
       canEscapeKeyClose

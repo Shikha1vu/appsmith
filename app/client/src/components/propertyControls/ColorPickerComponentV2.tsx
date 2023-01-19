@@ -536,39 +536,42 @@ const ColorPickerComponent = React.forwardRef(
         className="popover-target-colorpicker t--colorpicker-v2-popover"
         ref={containerRef}
       >
-        <Popover
-          autoFocus={false}
-          boundary="viewport"
-          enforceFocus={false}
-          interactionKind={PopoverInteractionKind.CLICK}
-          isOpen={isOpen}
-          minimal
-          modifiers={POPOVER_MODFIER}
-          onInteraction={handleOnInteraction}
-          portalContainer={props.portalContainer}
-        >
-          <StyledInputGroup
-            autoFocus={props.autoFocus}
-            inputRef={inputGroupRef}
-            leftIcon={
-              <LeftIcon color={color} handleInputClick={handleInputClick} />
-            }
-            onChange={handleChangeColor}
-            onClick={handleInputClick}
-            placeholder={placeholderText || "enter color name or hex"}
-            value={color}
-          />
+        {
+          // @ts-expect-error type
+          <Popover
+            autoFocus={false}
+            boundary="viewport"
+            enforceFocus={false}
+            interactionKind={PopoverInteractionKind.CLICK}
+            isOpen={isOpen}
+            minimal
+            modifiers={POPOVER_MODFIER}
+            onInteraction={handleOnInteraction}
+            portalContainer={props.portalContainer}
+          >
+            <StyledInputGroup
+              autoFocus={props.autoFocus}
+              inputRef={inputGroupRef}
+              leftIcon={
+                <LeftIcon color={color} handleInputClick={handleInputClick} />
+              }
+              onChange={handleChangeColor}
+              onClick={handleInputClick}
+              placeholder={placeholderText || "enter color name or hex"}
+              value={color}
+            />
 
-          <ColorPickerPopup
-            changeColor={props.changeColor}
-            color={color}
-            containerRef={popupRef}
-            setColor={setColor}
-            setIsOpen={setIsOpen}
-            showApplicationColors={props.showApplicationColors}
-            showThemeColors={props.showThemeColors}
-          />
-        </Popover>
+            <ColorPickerPopup
+              changeColor={props.changeColor}
+              color={color}
+              containerRef={popupRef}
+              setColor={setColor}
+              setIsOpen={setIsOpen}
+              showApplicationColors={props.showApplicationColors}
+              showThemeColors={props.showThemeColors}
+            />
+          </Popover>
+        }
       </div>
     );
   },

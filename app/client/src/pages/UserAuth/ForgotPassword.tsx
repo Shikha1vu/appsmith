@@ -158,7 +158,7 @@ export const ForgotPassword = withTheme(
 
 const selector = formValueSelector(FORGOT_PASSWORD_FORM_NAME);
 
-export default connect((state, props: ForgotPasswordProps) => {
+export default connect((state: object, props: ForgotPasswordProps) => {
   const queryParams = new URLSearchParams(props.location.search);
   return {
     initialValues: {

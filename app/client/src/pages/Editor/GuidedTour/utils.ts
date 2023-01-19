@@ -114,7 +114,7 @@ class IndicatorHelper {
     // This is to invoke at the start and then recalculate every 3 seconds
     // 3 seconds is an arbitrary value here to avoid calling getBoundingClientRect to many times
     this.calculate(primaryReference, position, offset);
-    this.timerId = setInterval(() => {
+    this.timerId = window.setInterval(() => {
       this.calculate(primaryReference, position, offset);
     }, 3000);
   }

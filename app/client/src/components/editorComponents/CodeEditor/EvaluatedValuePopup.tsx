@@ -502,11 +502,14 @@ function PopoverContent(props: PopoverContentProps) {
             Expected Structure
             <CollapseToggle isOpen={openExpectedDataType} />
           </StyledTitle>
-          <Collapse isOpen={openExpectedDataType}>
-            <TypeText colorTheme={props.theme} padded ref={typeTextRef}>
-              {props.expected.type}
-            </TypeText>
-          </Collapse>
+          {
+            // @ts-expect-error type
+            <Collapse isOpen={openExpectedDataType}>
+              <TypeText colorTheme={props.theme} padded ref={typeTextRef}>
+                {props.expected.type}
+              </TypeText>
+            </Collapse>
+          }
         </>
       )}
       {props.expected && props.expected.type !== UNDEFINED_VALIDATION && (
@@ -515,15 +518,18 @@ function PopoverContent(props: PopoverContentProps) {
             Expected Structure - Example
             <CollapseToggle isOpen={openExpectedExample} />
           </StyledTitle>
-          <Collapse isOpen={openExpectedExample}>
-            <TypeText colorTheme={props.theme} ref={typeTextRef}>
-              <CurrentValueViewer
-                evaluatedValue={props.expected.example}
-                hideLabel
-                theme={props.theme}
-              />
-            </TypeText>
-          </Collapse>
+          {
+            // @ts-expect-error type
+            <Collapse isOpen={openExpectedExample}>
+              <TypeText colorTheme={props.theme} ref={typeTextRef}>
+                <CurrentValueViewer
+                  evaluatedValue={props.expected.example}
+                  hideLabel
+                  theme={props.theme}
+                />
+              </TypeText>
+            </Collapse>
+          }
         </>
       )}
       {!props.hideEvaluatedValue && (

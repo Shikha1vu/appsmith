@@ -228,6 +228,7 @@ function MapComponent(props: MapComponentProps) {
           loadingElement={MapContainerWrapperMemoized}
           mapElement={MapContainerWrapperMemoized}
           {...props}
+          // @ts-expect-error zoom is not a valid prop
           zoom={zoom}
         />
       )}

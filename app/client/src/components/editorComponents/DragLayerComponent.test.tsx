@@ -1,7 +1,7 @@
 import React from "react";
 import { DndProvider } from "react-dnd";
 import TestRenderer from "react-test-renderer";
-import TouchBackend from "react-dnd-touch-backend";
+import { TouchBackend } from "react-dnd-touch-backend";
 
 import DragLayerComponent from "./DragLayerComponent";
 import { RenderModes } from "constants/WidgetConstants";

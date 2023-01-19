@@ -38,7 +38,9 @@ export interface StyledRadioGroupProps {
   isDynamicHeightEnabled?: boolean;
 }
 
-const StyledRadioGroup = styled(RadioGroup)<StyledRadioGroupProps>`
+const StyledRadioGroup = styled(RadioGroup)<
+  React.PropsWithChildren<StyledRadioGroupProps>
+>`
   ${BlueprintRadioSwitchGroupTransform}
 
   .${Classes.CONTROL} {

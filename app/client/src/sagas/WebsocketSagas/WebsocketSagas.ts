@@ -64,7 +64,10 @@ function listenToSocket(socket: Socket) {
 }
 
 function* readFromAppSocket(socket: any) {
-  const channel: EventChannel<unknown> = yield call(listenToSocket, socket);
+  const channel: EventChannel<object | null> = yield call(
+    listenToSocket,
+    socket,
+  );
   while (true) {
     const action: { type: keyof typeof WEBSOCKET_EVENTS } = yield take(channel);
     switch (action.type) {
@@ -136,7 +139,10 @@ function* openAppLevelSocketConnection() {
 }
 
 function* readFromPageSocket(socket: any) {
-  const channel: EventChannel<unknown> = yield call(listenToSocket, socket);
+  const channel: EventChannel<object | null> = yield call(
+    listenToSocket,
+    socket,
+  );
   while (true) {
     const action: { type: keyof typeof WEBSOCKET_EVENTS } = yield take(channel);
     switch (action.type) {

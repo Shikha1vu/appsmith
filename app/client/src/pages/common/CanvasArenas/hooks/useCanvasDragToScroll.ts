@@ -47,7 +47,9 @@ export const useCanvasDragToScroll = (
               behavior: "smooth",
             });
           }
-          scrollTimeOut.push(setTimeout(scrollFn, 100 * Math.max(0.4, speed)));
+          scrollTimeOut.push(
+            window.setTimeout(scrollFn, 100 * Math.max(0.4, speed)),
+          );
         }
       };
       const checkIfNeedsScroll = (e: any) => {
