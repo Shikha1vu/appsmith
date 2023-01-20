@@ -33,6 +33,7 @@ public enum FeatureFlagEnum {
     DATASOURCE_ENVIRONMENTS,
     CUSTOM_JS_LIBRARY,
     AUTO_LAYOUT,
+    LAZY_CANVAS_RENDERING,
 
     // Put EE flags below this line, to avoid conflicts.
     RBAC,

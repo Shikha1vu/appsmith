@@ -10,6 +10,7 @@ type FeatureFlags = {
   DATASOURCE_ENVIRONMENTS?: boolean;
   CUSTOM_JS_LIBRARY?: boolean;
   MULTIPLE_PANES?: boolean;
+  LAZY_CANVAS_RENDERING?: boolean;
 };
 
 export default FeatureFlags;
